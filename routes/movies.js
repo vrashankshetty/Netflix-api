@@ -35,7 +35,7 @@ router.put("/:id",verify,async (req,res)=>{
           
      try{
          const newMovie=await Movie.findByIdAndUpdate(req.params.id,{$set:req.body},{new:true}) 
-         res.status(200).json("movie is updated")
+         res.status(200).json(newMovie)
      }catch(e){
          res.status(404).json(e)
   }
